@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+    @apply bg-gradient-to-br from-slate-900 to-slate-900 via-slate-700
+}
+.card{
+    @apply bg-white rounded overflow-hidden shadow-md mb-5
+}
+
+.navhover{
+    @apply hover:border-2 rounded hover:border-slate-500 hover:p-1
+}
+
+.footerhover{
+    @apply hover:border-2 rounded hover:border-slate-500 hover:p-1
+}
+
