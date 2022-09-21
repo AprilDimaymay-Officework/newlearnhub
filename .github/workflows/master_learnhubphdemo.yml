@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://newlearnhub.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_c1c5160fed474fcbb3cc00fc76b825ce }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_942a363bb6e64991a9c16a3e1f21af8f }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_988acef95dc04c59a6c5630d9bf4d232 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_ad5d0084b4524f9d9e11638bf6c24860 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: newlearnhub.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c1c5160fed474fcbb3cc00fc76b825ce }}/newlearnhub:${{ github.sha }}
+        tags: newlearnhub.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_988acef95dc04c59a6c5630d9bf4d232 }}/newlearnhub:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'learnhubphdemo'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3c6e05462c3a4115810851899dede65f }}
-        images: 'newlearnhub.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_c1c5160fed474fcbb3cc00fc76b825ce }}/newlearnhub:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e6be5008ae704922b0525956e307c6ed }}
+        images: 'newlearnhub.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_988acef95dc04c59a6c5630d9bf4d232 }}/newlearnhub:${{ github.sha }}'
